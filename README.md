@@ -13,9 +13,11 @@ They'd like a data engineer to create a Postgres database with tables designed t
 
 This database constitutes a recollection of user activity while listening to music in Sparkify, this could enable to gain insights on trends, personal preferences, and even possible recommendations. This data could be used to explore new features, such as song recommendations, in the startup and ultimately improve the user experience. 
 
+The database schema was designed taking into mind the raw data, the tables respect the original format of the data to make the ETL process easier. This is why the Artist's and Song's Ids are kept as strings and gender is keep as a single char. The fact table is songplays, which contains the log for the user activity in the Sparkify app, the table contains the IDs to the corresponding dimension tables which are: users, songs, artists and time. 
+
 ## ETL pipeline.
 
-The database schema and ETL pipeline was designed taking into mind the raw data, the tables respect the original format of the data to make the ETL process easier. This is why the Artist's and Song's Ids are kept as strings and gender is keep as a single char. I avoided to set the primary key constraint as there are repeating artists and songs ids, but these could be solved during the ETL Pipeline. In terms of the ETL pipeline, the process is quite simple, as we read the files and do simple transformations to ensure the data types for each table.
+ In terms of the ETL pipeline, the process is quite simple, as we read the files containing the raw data and do simple transformations to ensure the data types for each table. during the insertion into the database, it was taken into account possible duplicates and we update the given records in case of primari key conflicts. 
 
 ## Project Files
 
