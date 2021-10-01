@@ -9,6 +9,8 @@ They'd like a data engineer to create a Postgres database with tables designed t
 
 ## Database design.
 
+![alt text](https://github.com/cm-amaya/udacity_de_nano_project_1/blob/main/images/sparkifydb_erd.png?raw=true)
+
 This database constitutes a recollection of user activity while listening to music in Sparkify, this could enable to gain insights on trends, personal preferences, and even possible recommendations. This data could be used to explore new features, such as song recommendations, in the startup and ultimately improve the user experience. 
 
 ## ETL pipeline.
@@ -17,4 +19,14 @@ The database schema and ETL pipeline was designed taking into mind the raw data,
 
 ## Project Files
 
+- sql_queries.py: Contains the queries in charge of droping, creating, inserting rows and selecting data from the Sparkify database.
+- create_tables.py: Executes the drop and create table statements that are contained in sql_queries.py. Must be run anytime a change is made in the etl.py 
+- etl.py: Script in charge of running the ETL pipeline, readind the files in data/ and loading the information to the Sparkify database.
+- etl.ipynb: Jupyter notebook with a initial test of the ETL methods to use in bulk data loading. 
+- test.ipynb: Jupyter notebook that allows to test the creation of the tables and ETL process by querying the tables
+- ER Diagram.ipynb: Allows to create a ER diagram of the Sparkify database.
+
 ## How to run the Project
+
+Run the **create_tables.py** script to create the database and create the corresponding tables, then run the **etl.py** to load the data, finally test the ETL process with **test.ipynb**. After running test.ipynb, restart the kernel, to close the SQL connection.
+
